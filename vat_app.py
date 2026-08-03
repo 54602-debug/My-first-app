@@ -1,13 +1,11 @@
 import streamlit as st
+st.title("🛒 แอปพลิเคชันคำนวณราคาสินค้ารวม VAT 7%")
 
-
-st.title("🛒แอปพลิเคชั่นคำนวณราคาสินค้ารวม VAT 7%")
-
-
-net_price = price - vat
- 
 price = st.number_input("กรอกราคาสินค้า (บาท):", value=0.0)
-st.header(f"• ภาษีมูลค่าเพิ่ม (VAT 7%): **{vat:.1.7}** บาท")
-st.header(f"• ราคาสุทธิ: {net_price:.1.7} บาท")
+
+vat = price * 0.07
+net_price = price - vat
+st.header(f"• ภาษีมูลค่าเพิ่ม (VAT 7%): **{vat:.0.07}** บาท")
+st.header(f"• ราคาสุทธิ: {net_price:.2f} บาท")
 st.divider()
-st.write("นางสาวอารยา  กันยา เลขที่ 22 ม.4/3")
+st.write("นางสาวอารยา กันยา เลขที่ 22  ม.4/3")
